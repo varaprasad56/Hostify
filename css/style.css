@@ -1,0 +1,140 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+:root {
+  --font-color: #22303c;
+  --color-dark-background: #181818;
+  --color-dark-component: #212121;
+  --color-dark-component-hover: #3d3d3d;
+  --color-dark-font-primary: #ffffff;
+  --color-dark-font-secondary: #bfbfbf;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  line-height: 1.6;
+  font-size: 2rem;
+  background-color: azure;
+  color: var(--font-color);
+  margin: 0;
+}
+/* ------ Icon Styling Start-----------*/
+.icon {
+  height: 48px;
+  width: 48px;
+}
+.icon-primary {
+  fill: skyblue;
+}
+.icon-container {
+  width: 64px;
+  height: 64px;
+  background-color: royalblue;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+}
+/* --------Icon Styling End----------- */
+
+/* ------- Grid Styling Start------------ */
+
+/* Two column grid has converts to 2 columns from tablet screens */
+@media screen and (min-width: 768px) {
+  .grid--cols-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --------Grid Styling end ------------- */
+.badge {
+  background-color: burlywood;
+  padding: 0.5rem 2rem;
+  border-radius: 2rem;
+  white-space: nowrap;
+  font-weight: bold;
+}
+.badge-sm {
+  padding: 0.5rem rem;
+}
+.badge--primary {
+  background-color: cornflowerblue;
+  color: cornsilk;
+}
+/* ----- Collapsible start ------- */
+
+.collapsible__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.collapsible__header__title {
+  margin: 0;
+}
+
+.collapsible__header__icon {
+  transform: rotate(-90deg);
+  transition: transform 0.3s;
+}
+
+.collapsible__content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.collapsible--expanded .collapsible__header__icon {
+  transform: rotate(0deg);
+}
+
+.collapsible--expanded .collapsible__content {
+  max-height: 100vh;
+  opacity: 1;
+}
+
+/* ----- Collapsible end --------- */
+
+/* lists */
+.list {
+  list-style-type: none;
+  padding-left: 0;
+}
+.list--inline .list__item {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.list--tick {
+  list-style-image: url(../images/tick.svg);
+  padding-left: 4rem;
+}
+/* buttons */
+.btn {
+  text-transform: uppercase;
+  padding: 1rem 3rem;
+  border-radius: 2rem;
+  border: 1px solid grey;
+  font-weight: bold;
+  background-color: cadetblue;
+  color: cornsilk;
+  outline: 0;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: darkorchid;
+}
+
+.btn--block {
+  width: 100%;
+}
+
+.btn--accent {
+  background-color: crimson;
+}
